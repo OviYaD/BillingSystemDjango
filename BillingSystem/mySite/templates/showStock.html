@@ -1,0 +1,122 @@
+<!-- <html>
+
+<head>
+    <title>
+        PRODUCT DETAILS
+    </title>
+</head>
+
+<body>
+
+    {%if name%}
+    <h1>Product name: {{name}}</h1>
+    <h1>Price: {{price}}</h1>
+    <h1>Stock: {{stock}}</h1>
+    {%endif%}
+</body>
+
+</html> -->
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <style>
+        body {
+            color: #000;
+            overflow-x: hidden;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: 100% 100%
+        }
+        
+        h3 {
+            font-weight: 600;
+            box-shadow: 6px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card {
+            padding: 30px 40px;
+            margin-top: 80px;
+            margin-bottom: 60px;
+            border: none !important;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+        }
+        
+        .btn-block {
+            text-transform: uppercase;
+            font-size: 15px !important;
+            font-weight: 400;
+            height: 43px;
+            cursor: pointer
+        }
+        
+        .btn-block:hover {
+            color: #fff !important
+        }
+        
+        button:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            outline-width: 0
+        }
+        
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        
+        h1 {
+            color: #06145cad;
+            font-size: 25px;
+        }
+        
+        span {
+            color: black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <img id="myVideo" src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F210617225258-kroger-store-0302-restricted.jpg" alt="">
+
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-5 col-lg-6 col-md-7 col-9 text-center">
+                <div class="card">
+
+                    <h2 style="font-weight:600 ;">STOCK</h2><br><br> {%if name%}
+                    <h1>Product name: <span>{{name}}</span></h1>
+                    <h1>Price: <span>{{price}}</span></h1>
+                    <h1>Stock: <span>{{stock}}
+
+                        </span></h1>
+                    {%else%}
+                    <h1>NO PRODUCTS</h1>
+                    {%endif%}
+                    <br><br>
+
+                    <form action="/home/">
+                        <div class="row justify-content-center">
+                            <div class="form-group col-sm-4"> <button type="submit" class="btn-block btn-primary">
+                                    HOME</button> </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

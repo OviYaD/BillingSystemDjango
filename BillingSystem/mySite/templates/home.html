@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>BILLING APPLICATION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+        }
+        
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        
+        .content {
+            position: fixed;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        #myBtn {
+            width: 200px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        #myBtn:hover {
+            background: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="myVideo" src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F210617225258-kroger-store-0302-restricted.jpg" alt="">
+    <div class="content">
+        <h1>Heading</h1>
+        <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi
+            pro.
+        </p>
+        <center>
+            <form action="/addproduct/">
+                {%csrf_token%}
+                <button id="myBtn">ADD PRODUCTS</button>
+            </form>
+            <form action="/customerDetails/">
+                {%csrf_token%}
+
+                <button id="myBtn">BILLING</button>
+            </form>
+            <form action="/checkStock/">
+                {%csrf_token%}
+
+                <button id="myBtn">CHECK STOCK</button>
+            </form>
+        </center>
+    </div>
+
+</body>
+
+</html>

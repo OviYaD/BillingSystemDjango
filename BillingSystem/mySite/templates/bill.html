@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        BILL
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .card {
+            padding: 30px 40px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            border: none !important;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+        }
+        
+        .small-container {
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+        .cart-page {
+            margin: 80px auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .cart-info {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        th {
+            text-align: left;
+            padding: 5px;
+            color: #fff;
+            background: #8cc311;
+            font-weight: normal;
+            font-size: 18px;
+        }
+        
+        td {
+            padding: 10px 5px;
+        }
+        
+        td input {
+            width: 40px;
+            height: 30px;
+            padding: 5px;
+        }
+        
+        td a {
+            color: #ff523b;
+            font-size: 15px;
+        }
+        
+        td img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+        
+        .total-price {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .total-price table {
+            border-top: 3px solid #8cc311;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        td:last-child {
+            text-align: right;
+        }
+        
+        th:last-child {
+            text-align: right;
+        }
+        
+        h1 {
+            font-size: 35px;
+        }
+        
+        pre {
+            font-size: 15px;
+        }
+        
+        h4 {
+            font-size: 20px;
+        }
+        
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-----cart item detail---------------->
+    <img id="myVideo" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fimage-photo%2Fgrocery-shopping-concept-meat-fish-fruits-1297709455&psig=AOvVaw2ORxztzl3rCfcUVh-4pVKg&ust=1654097880075000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJD2nPuIivgCFQAAAAAdAAAAABAI"
+        alt="">
+    <div class="small-container cart-page card">
+        <center>
+            <h1>SAN STORES</h1>
+            <pre>123-A, Anna Streets, Coimbatore</pre>
+        </center>
+        <div class="customer">
+            <h4>Customer Name: {{ name }}
+                <span style="float: right;">Bill NO: {{ billId }}</span>
+            </h4>
+        </div>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+
+            </tr>
+            {%for item in items%}
+
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <!-- <img src="images/product-2.jpeg"> -->
+                        <div>
+                            <p>{{item.name}}</p>
+                            <small>price:{{item.price}}</small>
+                            <br>
+                            <!-- <a href="">remove</a> -->
+                        </div>
+
+                    </div>
+                </td>
+                <td>{{item.quantity}}</td>
+                <td>
+                    {{item.total}}
+                </td>
+            </tr>
+            {%endfor%}
+
+        </table>
+
+        <div class="total-price">
+            <table>
+                <tr>
+                    <td>subtotal</td>
+                    <td>{{subTotal}}</td>
+                </tr>
+                <tr>
+                    <td>tax</td>
+                    <td>30.00</td>
+                </tr>
+                <tr>
+                    <td>total</td>
+                    <td>{{total}}</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+    <form action="/home/">
+        <div class="row justify-content-center">
+            <div class="form-group col-sm-2"> <button type="submit" class="btn-block btn-primary">
+                    HOME</button> </div>
+        </div>
+    </form>
+</body>
+
+</html>
